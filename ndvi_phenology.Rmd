@@ -130,13 +130,11 @@ Now let's update our function to work with list of file names we created
 ```{r}
 # now we're passing our function a number that will correspond to the index in the list of file names
 # let's test our function by asking it to read in the first file 
-
-ndvi_layer_fun <- function(i) {
+create_ndvi_layer <- function(i){
   landsat <- rast(files[i])
   names(landsat) <- c("blue", "green", "red", "NIR", "SWIR1", "SWIR2")
-  ndvi <- lapp(landsat[[4,3]], fun = ndvi_fun)
-  return(ndvi) 
-  }
+  ndvi <- lapp(landsat[[c(4, 3)]], fun = ndvi_fun)
+}
 
 ndvi_layer_fun(1)
 ```
