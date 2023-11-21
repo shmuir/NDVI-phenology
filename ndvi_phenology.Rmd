@@ -220,7 +220,7 @@ ggplot(sites_clean, aes(date, NDVI,
                         color = study_site)) +
   geom_line() +
   theme_linedraw() +
-  labs(title = "", color = "Study Site", x = "") +
+  labs(title = "Seasonal Cycles of Vegetation Productivity", color = "Vegetation Type", x = "") +
   scale_color_viridis_d()
 ```
 
